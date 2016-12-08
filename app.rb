@@ -70,3 +70,12 @@ delete('/routes') do
   @schedule = Train.all_routes
   erb(:routes)
 end
+
+get('/route/update/:id') do
+  route_id = params['id'].to_i
+  @route = Train.find_schedule(route_id).first
+  @cities = City.all
+  @trains = Train.all
+  @schedule = Train.all_routes
+  erb(:route_update)
+end

@@ -14,8 +14,8 @@
           <li>Date Time: <%= each['times'] %></li>
         </ul>
         <button type="submit" class="btn-danger btn">Delete</button>
-        <a href="/route/update" class="btn btn-warning">Update</a>
       </form>
+      <a class="btn btn-warning" href="/route/update/<%= each['id'] %>">Update</a>
 
       <% end %>
     <% end %>

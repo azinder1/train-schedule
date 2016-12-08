@@ -61,4 +61,9 @@ attr_reader(:name, :id)
     return_schedules = DB.exec("SELECT * FROM schedules;")
     schedule = return_schedules.to_a
   end
+
+  def self.find_schedule(route_id)
+    DB.exec("SELECT * FROM schedules WHERE id = #{route_id};")
+  end
+
 end
