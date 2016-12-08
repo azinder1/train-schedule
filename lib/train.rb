@@ -59,19 +59,6 @@ attr_reader(:name, :id)
 
   def self.all_routes
     return_schedules = DB.exec("SELECT * FROM schedules;")
-    p '-------', return_schedules.to_a
-    schedules = []
-    return_schedules.each do |schedule|
-      schedules.push(schedule.fetch('times'))
-      train = Train.find(schedule.fetch('train_ids'))
-      schedules.push(train.name)
-
-      city = City.find(schedule.fetch('city_ids').to_i)
-
-      p '*********', city
-       schedules.push(city.name())
-
-    end
-    schedules
+    schedule = return_schedules.to_a
   end
 end

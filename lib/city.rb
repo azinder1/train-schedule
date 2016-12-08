@@ -39,4 +39,9 @@ attr_reader(:name, :id)
   def delete
     DB.exec("DELETE FROM cities WHERE id = #{self.id()};")
   end
+
+  def self.delete_schedule(schedule_id)
+    DB.exec("DELETE FROM schedules WHERE id = #{schedule_id};")
+
+  end
 end
